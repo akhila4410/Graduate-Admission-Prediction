@@ -43,17 +43,6 @@ x_set, y_set = x_test, y_test1
 x1, x2 = np.meshgrid(np.arange(start=x_set[:, 0].min() - 1, stop=x_set[:, 0].max() + 1, step=0.01),
                      np.arange(start=x_set[:, 1].min() - 1, stop=x_set[:, 1].max() + 1, step=0.01))
 
-"""
-x1,x2,x3,x4,x5,x6,x7=np.meshgrid(np.arange(start=x_set[:,0].min()-1,stop=x_set[:,0].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,1].min()-1,stop=x_set[:,1].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,2].min()-1,stop=x_set[:,2].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,3].min()-1,stop=x_set[:,3].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,4].min()-1,stop=x_set[:,4].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,5].min()-1,stop=x_set[:,5].max()+1,step=0.01)
-                    ,np.arange(start=x_set[:,6].min()-1,stop=x_set[:,6].max()+1,step=0.01))
-#x2=np.meshgrid(np.arange(start=x_set[:,1].min()-1,stop=x_set[:,1].max()+1,step=0.01))
-"""
-
 plt.contourf(x1, x2, log_reg.predict(np.array([x1.flatten(), x2.flatten()]).T).reshape(x1.shape), alpha=0.95,
              cmap=ListedColormap(('yellow', 'blue')))
 plt.xlim(x1.min(), x1.max())
